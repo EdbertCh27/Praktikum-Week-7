@@ -43,22 +43,26 @@ namespace Praktikum_Week_7
                         int selisih = indexHurufMenjadi - IndexHurufInput;
                         string output = Convert.ToChar(Convert.ToInt32(huruf) + selisih).ToString();
 
-                        if(Convert.ToInt32(huruf) <= 65)
+                        if(Convert.ToInt32(huruf) + selisih < 65)
                         {
-                            int setValue = 90;
-                            int valueHuruf = Convert.ToInt32(huruf);
-                            valueHuruf = setValue;
-                            //labelOutput.Text += output.ToUpper();
+
+                            //int valueHuruf = Convert.ToInt32(huruf) + 26 + selisih;
+                            //valueHuruf = valueHuruf + 26 + selisih;
+                            labelOutput.Text += Convert.ToChar(Convert.ToInt32(huruf) + 26 + selisih);
                             
                         }
-                        else if (Convert.ToInt32(huruf) >= 90)
+                        else if (Convert.ToInt32(huruf) + selisih > 90)
                         {
-                            int setValue = 65;
-                            int valueHuruf = Convert.ToInt32(huruf);
-                            valueHuruf = setValue;
-                            //labelOutput.Text += output.ToUpper();
+                            
+                            //int valueHuruf = Convert.ToInt32(huruf);
+                            //valueHuruf = valueHuruf - 26 + selisih;
+                            labelOutput.Text += Convert.ToChar(Convert.ToInt32(huruf) - 26 + selisih);
                         }
-                        labelOutput.Text += output.ToUpper();
+                        else
+                        {
+                            
+                            labelOutput.Text += Convert.ToChar(Convert.ToInt32(huruf) + selisih);
+                        }
 
 
 
